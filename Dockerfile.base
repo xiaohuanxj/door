@@ -1,0 +1,27 @@
+FROM ubuntu:14.04
+MAINTAINER Liqiao.liu <liqiao.liu@56qq.com>
+ADD requirements.txt /requirements.txt
+RUN sed -i 's/archive.ubuntu/mirrors.163/g' /etc/apt/sources.list
+RUN sed -i 's/us\.archive\.ubuntu\.com/mirrors.163.com/g' /etc/apt/sources.list
+RUN apt-get update && apt-get install wget -y
+RUN apt-get install language-pack-zh-hans -y
+RUN mkdir -p /root/.pip
+ADD pip.conf /root/.pip/pip.conf
+RUN apt-get install python3-pip uwsgi -y 
+# Set the locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+
+# Time Zone
+RUN echo "Asia/Shanghai" > /etc/timezone
+RUN dpkg-reconfigure -f noninteractive tzdata
+
+RUN pip3 install --upgrade pip
+RUN mkdir -p /door
+RUN pip install -r /requirements.txt
+ADD . /door/
+
+WORKDIR /door
+
+CMD uwsgi --ini uwsgi.ini && tail -f /door/logs/all.log
+
