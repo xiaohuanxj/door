@@ -1,5 +1,5 @@
-FROM docker.56qq.com/python3_door_base:v20180815 
-MAINTAINER Liqiao.liu <liqiao.liu@56qq.com>
+FROM docker.xxqq.com/python3_door_base:v20180815 
+MAINTAINER Liqiao.liu <liqiao.liu@xxqq.com>
 ADD requirements.txt /requirements.txt
 ADD pip.conf /root/.pip/pip.conf
 # Set the locale

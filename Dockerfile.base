@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER Liqiao.liu <liqiao.liu@56qq.com>
+MAINTAINER Liqiao.liu <liqiao.liu@xxqq.com>
 ADD requirements.txt /requirements.txt
 RUN sed -i 's/archive.ubuntu/mirrors.163/g' /etc/apt/sources.list
 RUN sed -i 's/us\.archive\.ubuntu\.com/mirrors.163.com/g' /etc/apt/sources.list

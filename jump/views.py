@@ -12,7 +12,7 @@ from . import  doormath
 import random,string,IPy
 import sys
 
-HOSTNAME = 'http://osmp.qa-ag.56qq.com'
+HOSTNAME = 'http://osmp.qa-ag.xxqq.com'
 logger = logging.getLogger('django')
 
 @csrf_exempt
@@ -366,7 +366,7 @@ def resetPassword(request):
                 "status": "OK",
                 "errorMsg": "",
             }
-            send_mail('堡垒机重置密码', '用户 %s  重置密码为：%s webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName, passWord, webLogininfo, sshLogininfo),'sa-no-reply@hcb.cn', ['liqiao.liu@56qq.com'],fail_silently=False)
+            send_mail('堡垒机重置密码', '用户 %s  重置密码为：%s webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName, passWord, webLogininfo, sshLogininfo),'sa-no-reply@xx.cn', ['liqiao.liu@xxqq.com'],fail_silently=False)
             logger.info(" %s idcenName: %s ,userName %s ,resetPassword %s, 200 reason:%s" % (request.method, idcenName,userName,passWord,reason))
             return JsonResponse(response,safe=False)
         else:
@@ -421,8 +421,8 @@ def addUsertogroup(request):
                 "errorMsg": "",
                 }
                 # send_mail的参数分别是  邮件标题，邮件内容，发件箱(settings.py中设置过的那个)，收件箱列表(可以发送给多个人),失败静默(若发送失败，报错提示我们)
-                #send_mail('堡垒机初始密码', '添加用户 %s 成功 初始密码默认为：%s! webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName,passWord,webLogininfo,sshLogininfo),'liqiao.liu@56qq.com',['liqiao.liu@56qq.com'], fail_silently=False )
-                send_mail('堡垒机初始密码', ' 添加用户 %s 成功 初始密码默认为：%s webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName, passWord, webLogininfo, sshLogininfo),'sa-no-reply@hcb.cn', ['liqiao.liu@56qq.com'],fail_silently=False)
+                #send_mail('堡垒机初始密码', '添加用户 %s 成功 初始密码默认为：%s! webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName,passWord,webLogininfo,sshLogininfo),'liqiao.liu@xxqq.com',['liqiao.liu@xxqq.com'], fail_silently=False )
+                send_mail('堡垒机初始密码', ' 添加用户 %s 成功 初始密码默认为：%s webLogininfo: 请登录 %s 修改密码。\n sshLogininfo: %s' % (userName, passWord, webLogininfo, sshLogininfo),'sa-no-reply@xx.cn', ['liqiao.liu@xxqq.com'],fail_silently=False)
                 logger.info("%s idcName: %s 添加用户 %s ，密码: %s,成功 200 reason:%s" % (request.method,idcenName,userName,passWord,reason))
                 return JsonResponse(response, safe=False)
                 #return JsonResponse({"status:":"ok"}, safe=False)

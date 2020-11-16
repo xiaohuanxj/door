@@ -185,14 +185,14 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 #EMAIL_USE_TLS = False
 #EMAIL_USE_SSL = True
-#EMAIL_HOST = 'mail.56qq.com'
+#EMAIL_HOST = 'mail.xxqq.com'
 #EMAIL_PORT = 25
-#EMAIL_HOST_USER = 'liqiao.liu@56qq.com'
+#EMAIL_HOST_USER = 'liqiao.liu@xxqq.com'
 #DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
-EMAIL_HOST_USER = 'sa-no-reply@hcb.cn'
-EMAIL_HOST_PASSWORD = '1234%qwerT'
+EMAIL_HOST_USER = 'sa-no-reply@xx.cn'
+EMAIL_HOST_PASSWORD = '123456'
 EMAIL_HOST = "smtp.exmail.qq.com"
 EMAIL_PORT = 25
 EMAIL_TIMEOUT = 20
